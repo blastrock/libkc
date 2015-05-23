@@ -1,9 +1,9 @@
-void PANIC2(const char*);
+#include <assert.h>
 
 #define DECLARE_STUB(fn) \
   void fn() \
   { \
-    PANIC2(#fn " is not implemented"); \
+    assert(! #fn " is not implemented"); \
   }
 
 extern "C"
