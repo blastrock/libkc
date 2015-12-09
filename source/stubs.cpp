@@ -18,7 +18,6 @@ DECLARE_STUB(_Unwind_RaiseException)
 DECLARE_STUB(_Unwind_Resume)
 DECLARE_STUB(_Unwind_SetGR)
 DECLARE_STUB(_Unwind_SetIP)
-DECLARE_STUB(__cxa_atexit)
 DECLARE_STUB(__dso_handle)
 DECLARE_STUB(abort)
 DECLARE_STUB(btowc)
@@ -102,5 +101,10 @@ DECLARE_STUB(wmemcmp)
 DECLARE_STUB(wmemcpy)
 DECLARE_STUB(wmemmove)
 DECLARE_STUB(wmemset)
+
+// There is no exit in a kernel
+void __cxa_atexit()
+{
+}
 
 }
