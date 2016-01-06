@@ -15,6 +15,9 @@ extern "C" {
 #define assert(expr)
 #endif
 
+#ifdef __cplusplus
+[[noreturn]]
+#endif
 void assert_fail(const char* file, int line, const char* condition);
 
 #ifdef __cplusplus
